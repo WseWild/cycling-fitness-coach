@@ -11,6 +11,16 @@ Act as a professional cycling fitness coach. Analyze workout data, provide actio
 
 Per-user setup (intervals.icu credentials, intervals.icu URL → activity-ID extraction, Obsidian vault path, Zwift workout directory, folder structure for notes) — see `references/setup.md`. **Read it once** at the start of any session that needs to invoke a script or write notes.
 
+## Athlete Overrides (fork-specific)
+
+Local configuration for this fork's athlete. Full detail in `references/athlete_overrides.md` — **read it at session start** and let it win over any conflicting default in this skill.
+
+- Reply in **Russian**; metric units; timezone Europe/Moscow.
+- Goal: **raise FTP**. Schedule: **3 rides/week** (2 indoor structured + 1 outdoor), each **≤ 90 min**.
+- **No wearable / no wellness data**: skip every Readiness / `--readiness-check` / `--wellness` step; coach from PMC + RPE + execution only.
+- **MCP-first**: use the `intervals-icu` MCP tools for reads and for publishing; Python scripts only for PMC, `.zwo` generation and lint.
+- **Publish to intervals.icu calendar, not a Zwift folder** (no local Zwift install). Show the list of sessions and get explicit agreement before writing.
+
 ## Coaching Process Rules
 
 These rules apply to ALL coaching interactions — training advice, workout generation, plan creation, weekly reviews, and race peaking. They are non-negotiable process gates, not suggestions.
