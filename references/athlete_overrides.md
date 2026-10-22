@@ -7,11 +7,23 @@ Single source of per-athlete deviations from the upstream skill. When this file 
 - Timezone Europe/Moscow, metric.
 - Response language: Russian. Keep cycling acronyms (FTP, TSS, IF, CTL/ATL/TSB, RPE) as-is.
 
+## Memory: exocortex `cycling/` (source of context between chats)
+Path: `C:\Hit\exo_cortex\cycling\` (git repo `exo_cortex`, full protocol in `cycling/README.md`). intervals.icu stays the source of truth for numbers; the exocortex holds what intervals does not remember.
+- **Session start:** read `NOW.md` → `insights.md` → current file in `blocks/` → latest file in `log/`. If intervals has activities newer than the last `log/` entry, analyse those first. Do not re-ask the athlete for facts already in these files.
+- **After a ride analysis:** append 3–5 lines to `log/<YYYY-MM-DD>_<YYYY-MM-DD>.md` (Mon–Sun week): activity ID, plan → actual, RPE, one-line takeaway.
+- **When a plan decision is made:** add a row at the top of `decisions.md` (date | decision | why | alternative | review).
+- **When state changes** (FTP, block, next two weeks, open questions): rewrite `NOW.md`.
+- **Claims about the athlete** go to `insights.md` with scope, n + activity IDs, status (`гипотеза` / `подтверждено` / `опровергнуто` / `устарело`) and review trigger. Never record a hypothesis there as fact.
+- **Every number carries its method** (FTP: ramp 75% / 20′ 95% / 12′ / eFTP; load: power-TSS / HRSS / sRPE-adjusted). Vocabulary in `athlete.md`.
+- **Tests:** protocol + conditions in `tests/`, one summary row in `athlete.md`.
+- Never copy streams, .fit, GPX or API keys into the exocortex. Do not commit or push; the owner reviews the diff.
+- This replaces the Obsidian vault (`CYCLING_VAULT_PATH`) and `plans/active_plan.md` for this athlete.
+
 ## Goal and schedule
-- Goal: raise FTP (no race date yet). Default block: FTP Builder (see `references/block_templates.md`); schedule an FTP test per Rule 4 when the last one is >8 weeks old.
-- 3 rides/week: 2 indoor structured sessions + 1 outdoor ride (outdoor = endurance/tempo by feel, not ERG).
-- Hard cap **90 min per session**. Fit progression via intensity density and interval quality, not duration. Weekly TSS targets must be sized for ≤ 3 × 90 min.
-- With only 3 days, put the two key sessions (threshold / sweet spot / VO2) non-adjacent, outdoor ride as the long/endurance slot.
+- Goal: raise FTP over winter 2026/27, mostly indoor (MyWhoosh). Target number and date are set after the test series 26–31.10.2026 — see `NOW.md`.
+- **Winter mode until New Year: 3 rides/week, 6–8 h/week, all indoor.** The old 90-min hard cap is lifted. Default split: two key sessions (threshold / sweet spot / VO2) of 75–120 min, non-adjacent, plus one long Z2 endurance session (2.5–3.5 h) to carry the volume. Confirm the split with the athlete when building a block.
+- Default block: FTP Builder (see `references/block_templates.md`) with week-to-week progression of time-in-zone; VO2 mix per `decisions.md` (2 of 3 sessions 30/15, 1 of 3 long 4–5′ intervals). Schedule an FTP test per Rule 4 when the last one is >8 weeks old.
+- Summer (from spring 2027): long outdoor rides and brevets for durability and fun — do not "optimise" them away; place key sessions ≥2 days from a long ride.
 
 ## No wellness data
 - No wearable. **Skip** Readiness blocks, `--readiness-check`, `--wellness`, HRV/RHR/sleep gating, and menstrual-cycle references.

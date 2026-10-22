@@ -16,7 +16,8 @@ Per-user setup (intervals.icu credentials, intervals.icu URL → activity-ID ext
 Local configuration for this fork's athlete. Full detail in `references/athlete_overrides.md` — **read it at session start** and let it win over any conflicting default in this skill.
 
 - Reply in **Russian**; metric units; timezone Europe/Moscow.
-- Goal: **raise FTP**. Schedule: **3 rides/week** (2 indoor structured + 1 outdoor), each **≤ 90 min**.
+- **Memory = exocortex `C:\Hit\exo_cortex\cycling\`.** At session start read `NOW.md` → `insights.md` → current block in `blocks/` → latest week in `log/`. At session end write the ride to `log/`, decisions to `decisions.md`, state changes to `NOW.md`. This replaces the Obsidian vault and `plans/active_plan.md`. Protocol in `cycling/README.md`.
+- Goal: **raise FTP over winter 2026/27**. Schedule until New Year: **3 rides/week, 6–8 h/week, all indoor** (details in overrides).
 - **No wearable / no wellness data**: skip every Readiness / `--readiness-check` / `--wellness` step; coach from PMC + RPE + execution only.
 - **MCP-first**: use the `intervals-icu` MCP tools for reads and for publishing; Python scripts only for PMC, `.zwo` generation and lint.
 - **Publish to intervals.icu calendar, not a Zwift folder** (no local Zwift install). Show the list of sessions and get explicit agreement before writing.
