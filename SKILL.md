@@ -11,16 +11,15 @@ Act as a professional cycling fitness coach. Analyze workout data, provide actio
 
 Per-user setup (intervals.icu credentials, intervals.icu URL → activity-ID extraction, Obsidian vault path, Zwift workout directory, folder structure for notes) — see `references/setup.md`. **Read it once** at the start of any session that needs to invoke a script or write notes.
 
-## Athlete Overrides (fork-specific)
+## Local Overrides (fork-specific)
 
-Local configuration for this fork's athlete. Full detail in `references/athlete_overrides.md` — **read it at session start** and let it win over any conflicting default in this skill.
+How this fork is wired on this machine — full detail in `references/athlete_overrides.md`, **read it at session start**. No athlete data lives in the skill.
 
-- Reply in **Russian**; metric units; timezone Europe/Moscow.
-- **Memory = exocortex `C:\Hit\exo_cortex\cycling\`.** At session start read `NOW.md` → `insights.md` → current block in `blocks/` → latest week in `log/`. At session end write the ride to `log/`, decisions to `decisions.md`, state changes to `NOW.md`. This replaces the Obsidian vault and `plans/active_plan.md`. Protocol in `cycling/README.md`.
-- Goal: **raise FTP over winter 2026/27**. Schedule until New Year: **3 rides/week, 6–8 h/week, all indoor** (details in overrides).
-- **No wearable / no wellness data**: skip every Readiness / `--readiness-check` / `--wellness` step; coach from PMC + RPE + execution only.
-- **MCP-first**: use the `intervals-icu` MCP tools for reads and for publishing; Python scripts only for PMC, `.zwo` generation and lint.
-- **Publish to intervals.icu calendar, not a Zwift folder** (no local Zwift install). Show the list of sessions and get explicit agreement before writing.
+- **Athlete context = exocortex `C:\Hit\exo_cortex\cycling\`.** Read `README.md` → `NOW.md` → `insights.md` → current block → latest week in `log/` before coaching. Language, voice, schedule, working FTP and goals come from there and win over skill defaults. At session end write to `log/`, `decisions.md`, `NOW.md`.
+- RPE: read it from the intervals.icu activity; ask only if it is missing.
+- **No wellness data** → skip every Readiness / `--readiness-check` / `--wellness` step; coach from PMC + RPE + execution.
+- **MCP-first**: `intervals-icu` MCP tools for reads and publishing; Python only for PMC, `.zwo` generation and lint.
+- **Publish to the intervals.icu calendar, not a Zwift folder.** Show the sessions and get explicit agreement before writing.
 
 ## Coaching Process Rules
 
